@@ -4,13 +4,20 @@ const todoesSlice=createSlice({
 
     name:'todo',
     // this is initial value
-    initialState:{
-        name:'nn',
-    },
+    initialState:[
+       {id:'1',task:'today im gonna learn redux',completed:false},
+       {id:'2',task:'using redux with next js',completed:false}
+    ],
     // to update the initial value
     reducers:{
-        set_todoes(state,action){
-            state.name=action.payload
+        set_todoes:(state,action)=>{
+           const newOb={
+            id:Date.now(),
+            task:action.payload.task,
+            completed:action.payload.completed
+           }
+           state.push(newOb)
+          
         }
     }
 
