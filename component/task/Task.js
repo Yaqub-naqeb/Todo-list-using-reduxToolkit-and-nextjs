@@ -13,7 +13,7 @@ const clickHandler=()=>{
 
   return (
    <>
-   {todo&&<div className='flex gap-10'>
+   {todo.task&&<div className='flex gap-10'>
       
 
       {/* the task */}
