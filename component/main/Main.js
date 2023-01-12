@@ -18,7 +18,7 @@ const [task,setTask]=useState('');
 
 const changeHandler=(e)=>{
 e.preventDefault();
-  dsipatch(set_todoes({task:task}));
+  dsipatch(set_todoes({task}));
   setTask('');
 }
 
