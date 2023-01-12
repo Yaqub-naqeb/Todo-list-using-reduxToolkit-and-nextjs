@@ -1,26 +1,36 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { set_toggle } from '../../redux/reducers/todoes';
+import { set_toggle,delete_todoes } from '../../redux/reducers/todoes';
 
 const Task = ({todo}) => {
 const dispatch=useDispatch();
 
 
-const changeHandler=()=>{
-    
+const clickHandler=()=>{
+    dispatch(delete_todoes({id:todo.id,completed:todo.completed}))
 }
 
 
   return (
-    <div className='flex gap-5'>
+   <>
+   {todo&&<div className='flex gap-10'>
       
-<div className={`${todo.completed?'line-through text-red-500':''}`}>{todo.task}</div>
-<div>
-    <input type="checkbox" name="" id="" onChange={()=>dispatch(set_toggle({id:todo.id,completed:!todo.completed}))} checked={todo.completed} />
-</div>
 
-
-    </div>
+      {/* the task */}
+      
+      <div className={`${todo.completed?'line-through text-red-500':''}`}>{todo.task}</div>
+      <div>
+      
+          {/* the check box */}
+          <input type="checkbox" name="" id="" onChange={()=>dispatch(set_toggle({id:todo.id,completed:!todo.completed}))} checked={todo.completed} />
+      </div>
+      {/* delete */}
+      <div>
+        <button className='p-1 bg-red-400' onClick={clickHandler}>delete</button>
+      </div>
+      
+      
+          </div>}</>
   )
 }
 

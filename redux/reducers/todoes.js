@@ -17,18 +17,30 @@ const todoesSlice=createSlice({
             completed:false
            }
            state.push(newOb)},
-
+// second
            set_toggle:(state,action)=>{
             // const toggle=!state.payload.completed
             const index=state.findIndex(todo=> todo.id===action.payload.id)
             state[index].completed=action.payload.completed
 
 
-        }
+        },
+// third 
+            delete_todoes:(state,action)=>{
+
+                const index=state.findIndex(todo=> todo.id===action.payload.id)
+
+                state[index]='';
+
+
+
+
+
+            }
     }
 
 
 
 })
-export const {set_todoes,set_toggle}=todoesSlice.actions
+export const {set_todoes,set_toggle,delete_todoes}=todoesSlice.actions
 export default todoesSlice.reducer

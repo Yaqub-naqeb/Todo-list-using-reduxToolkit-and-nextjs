@@ -25,7 +25,7 @@ e.preventDefault();
 
 
   return (
-    <div className='flex flex-col items-center py-10'>
+    <div className='flex flex-col gap-14 items-center py-10'>
       <h1 className=' '>Todo List</h1>
 
 <form  onSubmit={changeHandler}>
@@ -36,12 +36,15 @@ e.preventDefault();
 </div>
 
 
+
 </form>
 
-
+<div className=' flex flex-col gap-16 items-center '>
+  
 {
   Current&&Current.map(todo=> <Task id={todo.id} todo={todo}/>)
 }
+</div>
 
     </div>
   )
