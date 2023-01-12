@@ -14,7 +14,7 @@ const todoesSlice=createSlice({
            const newOb={
             id:Date.now(),
             task:action.payload.task,
-            completed:action.payload.completed
+            completed:false
            }
            state.push(newOb)
           
