@@ -1,9 +1,13 @@
 import React from 'react'
+import Modal from './modal/Modal'
 
 const Layout = ({children}) => {
   return (
     <div>
-      <div className=' h-[100vh]'>
+     
+
+      <div className=' '>
+      
       {
 children
       }

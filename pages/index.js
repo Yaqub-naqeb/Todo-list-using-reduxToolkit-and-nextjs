@@ -1,8 +1,9 @@
 
-import { Inter } from '@next/font/google'
 import Main from '../component/main/Main'
+import Modal from '../component/modal/Modal'
 import Navbar from '../component/Navbar'
-const inter = Inter({ subsets: ['latin'] })
+import { Poppins } from '@next/font/google'
+const inter = Poppins({ subsets: ['bold'],weight: '800' })
 
 export default function Home() {
 
@@ -10,9 +11,13 @@ export default function Home() {
 
 
   return (
-    <div className='bg-gray-100 index '>
+    <div className='bg-gray-100 index relative '>
+
+<div >
+
 <Main/>
 
+</div>
          </div>
   )
 }

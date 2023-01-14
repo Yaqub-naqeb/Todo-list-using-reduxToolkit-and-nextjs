@@ -23,3 +23,12 @@
 height: 100vh;
 filter: blur(1);
 }
+/* blur */
+.xs{
+    backdrop-filter: blur(2px);
+}
+.plus{
+    background: #4f44a7;
+    border-radius: 50%;
+    transform: translateY(-2rem);
+}
