@@ -4,7 +4,7 @@ import { set_toggle,delete_todoes } from '../../redux/reducers/todoes';
 import { Poppins } from '@next/font/google'
 const poppins = Poppins({ style: ['normal'],
 subsets: ['latin'],
-weight: '300' })
+weight: '400' })
 
 const Task = ({todo}) => {
 const dispatch=useDispatch();
@@ -22,7 +22,10 @@ const clickHandler=()=>{
 
       {/* the task */}
       
-      <div className={`${todo.completed?'line-through text-red-500':''}`}>{todo.task}</div>
+      <div className={`${todo.completed?' text-green-300 ':''} ${poppins.className} text-xl relative`}>{todo.task}
+      
+      {todo.completed&&<div className='absolute w-full h-0 border-b-2 line border-green-500 '/>}
+      </div>
       <div>
       
           {/* the check box */}
@@ -30,7 +33,7 @@ const clickHandler=()=>{
       </div>
       {/* delete */}
       <div>
-        <button className='p-1 bg-red-400' onClick={clickHandler}>delete</button>
+        <button className={`p-1 rounded-md  text-white text-lg ${poppins.className} bg-Red`} onClick={clickHandler}>Delete</button>
       </div>
       
       {/* */}

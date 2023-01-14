@@ -1,17 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-
-import { set_todoes } from "../../redux/reducers/todoes";
 import { set_md } from "../../redux/reducers/modal";
 import Task from "../task/Task";
 import Modal from "../modal/Modal";
 import { Poppins } from '@next/font/google'
-import { current } from "@reduxjs/toolkit";
-const poppins = Poppins({ subsets: ['italic'],weight: '700' })
-
+const poppins = Poppins({ style: ['normal'],
+subsets: ['latin'],
+weight: '400' })
 const Main = () => {
-  // const {name}=useSelector(state=>state.profile)
   const Current = useSelector((state) => state.todoes);
   const modal = useSelector((state) => state.modal);
   console.log(Current);
@@ -20,9 +17,6 @@ const Main = () => {
   return (
     <div>
      {modal.md&& <div className={` xs z-50 bg-black text-white fixed inset-0 bg-opacity-30 backdrop-blur-lg text-lg flex justify-center items-center `}  >
-
-
-
         <Modal />
       </div>}
 
@@ -60,7 +54,7 @@ const Main = () => {
         <div className=" flex flex-col gap-16 items-center bg-white p-12 rounded-md shadow-sm">
           {Current.length!=0 ? Current.map((todo) => <Task id={todo.id} todo={todo} />):<div>
             
-            <h1 className={`${poppins.className} opacity-80`}>yesterday you said tomorrow</h1>
+            <h1 className={`${poppins.className} opacity-50`}>yesterday you said tomorrow!</h1>
                        
            </div> }
         </div>
