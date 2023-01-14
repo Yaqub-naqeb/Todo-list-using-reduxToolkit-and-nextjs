@@ -6,7 +6,7 @@ const todoesSlice=createSlice({
     // this is initial value
     initialState:[
        {id:'1',task:'today im gonna learn redux',completed:false},
-       {id:'2',task:'using redux with next js',completed:false}
+       {id:'2',task:'using redux with next js',completed:false,modal:false}
     ],
     // to update the initial value
     reducers:{
@@ -31,12 +31,11 @@ const todoesSlice=createSlice({
                 const index=state.findIndex(todo=> todo.id===action.payload.id)
 
                 state[index]='';
+            },
+//fourth 
+            // set_modal:(state,action)=>{
 
-
-
-
-
-            }
+            // }
     }
 
 
