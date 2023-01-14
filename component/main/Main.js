@@ -3,7 +3,9 @@ import React, { useState } from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 
 import { set_todoes } from '../../redux/reducers/todoes'
+import { set_md } from '../../redux/reducers/modal'
 import Task from '../task/Task'
+import Modal from '../modal/Modal'
 
 
 const Main = () => {
@@ -11,38 +13,43 @@ const Main = () => {
   
     // const {name}=useSelector(state=>state.profile)
     const Current=useSelector(state=>state.todoes)
-    console.log(Current);
+
+const modal=useSelector(state=>state.modal)
+
+
     const dsipatch=useDispatch();
 
-const [task,setTask]=useState('');
 
-const changeHandler=(e)=>{
-e.preventDefault();
+// const changeHandler=(e)=>{
+// e.preventDefault();
 
-dsipatch(set_todoes({task}));
-  setTask('');
-}
+// dsipatch(set_todoes({task}));
+//   setTask('');
+// }
 
 
 
   return (
-    <div className='flex flex-col gap-14 items-center pb-10 '>
+    <div className='flex flex-col gap-14 items-center pb-10 relative' >
 
-      <h1 className=' w-full text-center bg-white py-5 text-Main font-bold text-lg '>Todo List</h1>
+{/* blure page */}
 
-{/* <form  onSubmit={changeHandler}>
+<div className='blur-xl opacity-70 bg-white shadow-xl  blure h-full w-full absolute'>kk</div>
+<div>
 
-<div className='flex gap-5'>
-<input placeholder='Add your Task'  type="text" value={task} onChange={e=>setTask(e.target.value)} />
-<button>Add</button>
+<div className='blur bg-black h-full z-50 '><Modal /></div>
 </div>
 
 
+      <h1 className=' w-full text-center bg-white py-5 text-Main font-bold text-lg '>Todo List</h1>
 
-</form> */}
+
 
  {/* add task */}
-<div  className='cursor-pointer' >
+<div  className='cursor-pointer' onClick={()=>dsipatch(set_md(!modal))}>
+
+
+
 
 <div className='flex items-center align-middle justify-center gap-5 bg-[#af7eeb]  bg-Main text-white font-medium p-2 rounded-full'><div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />

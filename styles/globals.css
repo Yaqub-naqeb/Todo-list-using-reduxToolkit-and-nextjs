@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 .index{
     height: 100vh;
 
@@ -10,4 +9,17 @@
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
+}
+
+.md{
+    
+    position: absolute;
+     top: 30%;
+     width: 40rem; 
+     left: 30%;
+    
+}
+.blure{
+height: 100vh;
+filter: blur(1);
 }

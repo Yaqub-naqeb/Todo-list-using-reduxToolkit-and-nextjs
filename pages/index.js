@@ -10,7 +10,7 @@ export default function Home() {
 
 
   return (
-    <div className='bg-gray-400 index '>
+    <div className='bg-gray-100 index '>
 <Main/>
 
          </div>
