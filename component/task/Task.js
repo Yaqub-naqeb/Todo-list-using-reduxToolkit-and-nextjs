@@ -1,6 +1,10 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { set_toggle,delete_todoes } from '../../redux/reducers/todoes';
+import { Poppins } from '@next/font/google'
+const poppins = Poppins({ style: ['normal'],
+subsets: ['latin'],
+weight: '300' })
 
 const Task = ({todo}) => {
 const dispatch=useDispatch();
@@ -13,7 +17,7 @@ const clickHandler=()=>{
 
   return (
    <>
-   {todo.task&&<div className='flex gap-10'>
+   {todo.task&&<div className='flex gap-10 '>
       
 
       {/* the task */}
@@ -29,9 +33,10 @@ const clickHandler=()=>{
         <button className='p-1 bg-red-400' onClick={clickHandler}>delete</button>
       </div>
       
-      
+      {/* */}
           </div>}</>
   )
 }
 
 export default Task
+
